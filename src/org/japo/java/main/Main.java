@@ -15,15 +15,43 @@
  */
 package org.japo.java.main;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 /**
  *
  * @author Bianca Antonela Glavan - biancaantonela.glavan.alum@iescamp.es
  */
 public class Main {
+
+    public static final Scanner SCN
+            = new Scanner(System.in, "Windows-1252")
+                    .useLocale(Locale.ENGLISH).useDelimiter("\\s+");
+
     public static void main(String[] args) {
-        
-    
-        
+
+        // Area triangulo
+        double base;
+        double altura;
+
+        try {
+            System.out.print("Introduce base triangulo: ");
+            base = SCN.nextDouble();
+
+            System.out.print("Introduce altura triangulo: ");
+            altura = SCN.nextDouble();
+
+            double area = base * altura;
+
+            System.out.println("Base triángulo........: " + base);
+            System.out.println("Altura triángulo......: " + altura);
+
+            System.out.printf(Locale.ENGLISH, "Área triángulo.......: %.2f%n", area);
+
+        } catch (Exception e) {
+            System.out.println("ERROR: Entrada incorrecta.");
+        }
+
     }
-    
+
 }
